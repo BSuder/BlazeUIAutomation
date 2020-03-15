@@ -1,8 +1,9 @@
 package stepdefinitons;
 
-import stepdefinitions.StepDefinitions;
+import cucumber.annotation.en.Then;
+import cucumber.annotation.en.When;
 
-public class MainPageDefinitions extends StepDefinitions {
+public class MainPageDefinitions {
 
     @When("I select random departure city")
     public void iSelectRandomDepartureCity() {
