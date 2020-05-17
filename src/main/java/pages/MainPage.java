@@ -1,10 +1,13 @@
 package pages;
 
+import Helpers.objetcts.CommonPageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class MainPage {
+import java.PropertyReader;
+
+public class MainPage extends CommonPageObjects {
 
     WebDriver driver;
 
@@ -12,10 +15,25 @@ public class MainPage {
         this.driver = driver;
     }
 
+    By homeButton = By.linkText("Travel The World");
+    By travelTheWorldButton = By.linkText("home");
+
     By departureCity = By.className("fromPort");
     By destinationCity = By.className("toPort");
 
     By submitButton = By.className("btn btn-primary");
+
+    void openMainPage() {
+        driver.get(new PropertyReader().getMainPageURL());
+    }
+
+    void clickHomeButton() {
+        driver.findElement(homeButton).click();
+    }
+
+    void clickTravelTheWorldButton() {
+        driver.findElement(travelTheWorldButton).click();
+    }
 
     void selectDepartureCityByName(String name) {
         WebElement citiesList = driver.findElement(departureCity);

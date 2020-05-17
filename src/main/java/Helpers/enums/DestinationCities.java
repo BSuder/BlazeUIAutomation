@@ -1,4 +1,4 @@
-package Helpers;
+package Helpers.enums;
 
 import java.util.Random;
 
@@ -13,7 +13,7 @@ public enum DestinationCities {
 
     DestinationCities(String city) {}
 
-    public String getRandomCity() {
+    public static String getRandomCity() {
         int pick = new Random().nextInt(DestinationCities.values().length);
         return DestinationCities.values()[pick].toString();
     }
